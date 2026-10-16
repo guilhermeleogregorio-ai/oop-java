@@ -1,4 +1,4 @@
-package org.example;
+package org.guilherme;
 /*1.	Crie a classe Livro (titulo, autor, ano) com construtor, getters e toString. Gere tudo com Alt+Insert.
 2.	Em main, crie uma List<Livro> com 5 livros, 2 do mesmo autor, e imprima todos com for-each.
 3.	Monte um Map<String, Integer> com a quantidade de livros por autor e imprima.
@@ -9,7 +9,7 @@ package org.example;
 
 import java.util.*;
 
-import static org.example.Livro.buscarPorTitulo;
+import static org.guilherme.Livro.buscarPorTitulo;
 
 
 public class Main {
