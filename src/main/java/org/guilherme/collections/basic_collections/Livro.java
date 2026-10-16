@@ -1,4 +1,4 @@
-package org.guilherme;
+package org.guilherme.collections.basic_collections;
 
 import java.util.List;
 
