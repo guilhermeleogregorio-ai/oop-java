@@ -1,4 +1,4 @@
-package org.guilherme.inheritance.Figure;
+package org.guilherme.ifsp.exercises.inheritance.Figure;
 
 public class Main {
     public static void main(String[] args) {

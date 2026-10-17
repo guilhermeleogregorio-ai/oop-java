@@ -1,4 +1,4 @@
-package org.guilherme.collections.basic_collections;
+package org.guilherme.ifsp.exercises.collections.basic_collections;
 /*1.	Crie a classe Livro (titulo, autor, ano) com construtor, getters e toString. Gere tudo com Alt+Insert.
 2.	Em main, crie uma List<Livro> com 5 livros, 2 do mesmo autor, e imprima todos com for-each.
 3.	Monte um Map<String, Integer> com a quantidade de livros por autor e imprima.
@@ -9,7 +9,7 @@ package org.guilherme.collections.basic_collections;
 
 import java.util.*;
 
-import static org.guilherme.collections.basic_collections.Livro.buscarPorTitulo;
+import static org.guilherme.ifsp.exercises.collections.basic_collections.Livro.buscarPorTitulo;
 
 
 public class Main {

@@ -1,4 +1,4 @@
-package org.guilherme.inheritance.Employee;
+package org.guilherme.ifsp.exercises.inheritance.Employee;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
