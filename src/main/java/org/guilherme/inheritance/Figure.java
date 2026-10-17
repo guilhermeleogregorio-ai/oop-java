@@ -1,6 +1,6 @@
 package org.guilherme.inheritance;
 
-public class  Figure {
+public abstract class  Figure {
     double x;
     double y;
 
@@ -9,7 +9,12 @@ public class  Figure {
         this.y = y;
     }
 
-    public double area() {
-        return x * y;
+    public abstract double area();
+
+    public double getX() {
+        return x;
+    }
+    public double getY() {
+        return y;
     }
 }

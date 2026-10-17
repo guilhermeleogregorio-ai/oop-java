@@ -11,7 +11,7 @@ public class Triangle extends Figure{
         this.b = b;
         this.c = c;
     }
-
+    @Override
     public double area(){
         double s = (a + b + c) / 2.0;
         return Math.sqrt(s * (s - a) * (s - b) * (s - c));

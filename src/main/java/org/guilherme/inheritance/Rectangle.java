@@ -9,7 +9,7 @@ public class Rectangle extends Figure {
         this.width = width;
         this.length = length;
     }
-
+    @Override
     public double area() {
         return width * length;
     }
