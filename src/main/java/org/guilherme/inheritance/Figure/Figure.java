@@ -1,4 +1,4 @@
-package org.guilherme.inheritance;
+package org.guilherme.inheritance.Figure;
 
 public abstract class  Figure {
     double x;

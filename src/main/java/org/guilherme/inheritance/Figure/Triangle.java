@@ -1,6 +1,6 @@
-package org.guilherme.inheritance;
+package org.guilherme.inheritance.Figure;
 
-public class Triangle extends Figure{
+public class Triangle extends Figure {
     double a;
     double b;
     double c;
