@@ -1,9 +1,8 @@
 package org.guilherme.ifsp.exercises.polymorphism.Figure;
 
 public abstract class  Figure {
-    public static int area;
-    static double x;
-    static double y;
+    private double x;
+    private double y;
 
     public Figure(double x, double y) {
         this.x = x;
