@@ -1,4 +1,4 @@
-package org.guilherme.ifsp.exercises.collections.basic_collections;
+package org.guilherme.ifsp.exercises.collections.Livro;
 
 import java.util.List;
 
