@@ -20,11 +20,11 @@ public class Big implements MarioStates{
 
     @Override
     public void takeFlower() {
-
+        mario.nextState(mario.getFire());
     }
 
     @Override
     public void takeFeather() {
-
+        mario.nextState(mario.getCape());
     }
 }

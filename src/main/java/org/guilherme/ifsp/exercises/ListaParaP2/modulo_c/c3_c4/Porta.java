@@ -23,23 +23,11 @@ public class Porta {
         return estadoAtual;
     }
 
-    public void setStatesDoor(StatesDoor novoEstado) {
-        this.estadoAtual = novoEstado;
-    }
 
-    public void abrir(){
-        estadoAtual.abrir();
-        incrementarContador();
-    };
-    public void fechar(){
-        estadoAtual.fechar();
-    };
-    public void trancar(){
-        estadoAtual.trancar();
-    };
-    public void destrancar(){
-        estadoAtual.destrancar();
-    };
+    public void abrir()      { evento = "Abrir";      estadoAtual.abrir(); }
+    public void fechar()     { evento = "Fechar";     estadoAtual.fechar(); }
+    public void trancar()    { evento = "Trancar";    estadoAtual.trancar(); }
+    public void destrancar() { evento = "Destrancar"; estadoAtual.destrancar(); }
 
     public void incrementarContador(){
         contadorAberta++;
@@ -52,6 +40,12 @@ public class Porta {
         eventos.add(String.format("[%s] %s | %s => %s | Aberturas = %d",
                 LocalDateTime.now().format(FMT), evento,form ,to,contadorAberta));
 
+    }
+
+    public void setStatesDoor(StatesDoor novo) {
+        String de = estadoAtual.toString();
+        estadoAtual = novo;
+        log(de, novo.toString());
     }
 
     @Override

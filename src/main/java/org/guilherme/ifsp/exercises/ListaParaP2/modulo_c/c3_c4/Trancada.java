@@ -24,7 +24,7 @@ public class Trancada implements StatesDoor {
 
     @Override
     public void destrancar() {
-        this.porta.setStatesDoor(new Aberta(porta));
+        this.porta.setStatesDoor(new Fechada(porta));
     }
 
     @Override
