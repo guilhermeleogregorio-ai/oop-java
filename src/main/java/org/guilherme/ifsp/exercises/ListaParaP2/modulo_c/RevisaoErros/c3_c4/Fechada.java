@@ -9,9 +9,8 @@ public class Fechada implements EstadosPorta{
 
     @Override
     public void abrir() {
-        this.porta.setEstadosPorta(new Aberta(porta));
         this.porta.incrementaContador();
-
+        this.porta.setEstadosPorta(new Aberta(porta));
     }
 
     @Override
@@ -27,5 +26,10 @@ public class Fechada implements EstadosPorta{
     @Override
     public void destrancar() {
         throw new AcaoInvalidaException("A porta não está trancada");
+    }
+
+    @Override
+    public String toString() {
+        return "Fechada";
     }
 }

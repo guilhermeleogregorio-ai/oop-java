@@ -14,7 +14,7 @@ public class Trancada implements EstadosPorta{
 
     @Override
     public void fechar() {
-        throw new AcaoInvalidaException("A porta esta trancada não é possivel abrir");
+        throw new AcaoInvalidaException("A porta está trancada");
     }
 
     @Override
@@ -25,5 +25,10 @@ public class Trancada implements EstadosPorta{
     @Override
     public void destrancar() {
         this.porta.setEstadosPorta(new Fechada(porta));
+    }
+
+    @Override
+    public String toString() {
+        return "Trancada";
     }
 }

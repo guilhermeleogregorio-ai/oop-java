@@ -26,4 +26,9 @@ public class Aberta implements EstadosPorta{
     public void destrancar() {
         throw new AcaoInvalidaException("A porta está aberta não é possivel destrancar");
     }
+
+    @Override
+    public String toString() {
+        return "Aberta";
+    }
 }

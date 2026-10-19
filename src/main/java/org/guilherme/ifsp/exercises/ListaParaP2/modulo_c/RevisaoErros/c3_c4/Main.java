@@ -5,7 +5,17 @@ public class Main {
         Porta porta = new Porta();
 
         porta.abrir();
-        porta.imprimirEstado();
+        porta.fechar();
+        porta.trancar();
+        porta.destrancar();
 
+        try {
+            porta.destrancar();
+        } catch (AcaoInvalidaException e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
+
+        System.out.println(porta);
     }
 }
+

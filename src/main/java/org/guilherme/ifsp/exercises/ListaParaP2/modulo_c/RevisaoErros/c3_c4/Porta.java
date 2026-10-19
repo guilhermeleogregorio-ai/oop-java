@@ -1,6 +1,5 @@
 package org.guilherme.ifsp.exercises.ListaParaP2.modulo_c.RevisaoErros.c3_c4;
 
-import javax.xml.crypto.dsig.spec.XSLTTransformParameterSpec;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -28,16 +27,20 @@ public class Porta {
         System.out.println("Estado da porta: "+ estadosPorta);
     }
 
-    public void setEstadosPorta(EstadosPorta estadosPorta) {
-        this.estadosPorta = estadosPorta;
+    public void setEstadosPorta(EstadosPorta novo) {
+        log(estadosPorta.toString(), novo.toString());
+        this.estadosPorta = novo;
     }
 
     public void incrementaContador(){
         this.contatadorAberta ++;
     }
 
-    public List<String> getEventos(){
-        eventos.add(String.format("[%s] %s | %s => %s | Aberturas = %d ", LocalDateTime.now().format(FMT),evento,eventos,contatadorAberta));
+    public void log(String de,String para){
+        eventos.add(String.format("[%s] %s | %s => %s | Aberturas = %d ", LocalDateTime.now().format(FMT),evento,de,para,contatadorAberta));
+    }
+
+    public List<String> getEventos() {
         return eventos;
     }
 
