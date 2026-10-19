@@ -9,7 +9,7 @@ public class Trancada implements StatesDoor {
 
     @Override
     public void abrir() {
-        throw new AcaoInvalidaException("Destranque a porta para Abrir-lá!");
+        throw new AcaoInvalidaException("Destranque a porta para Abrir-la!");
     }
 
     @Override

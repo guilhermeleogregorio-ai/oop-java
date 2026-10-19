@@ -1,13 +1,12 @@
 package org.guilherme.ifsp.exercises.ListaParaP2.modulo_c.c3_c4;
 
-import java.text.Format;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Porta {
-    private static final DateTimeFormatter FMT = DateTimeFormatter.ofPattern(" [dd/MM/yyyy HH:mm:ss] ");
+    private static final DateTimeFormatter FMT = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
     private StatesDoor estadoAtual;
     private int contadorAberta;
     private String evento = "";
@@ -29,6 +28,12 @@ public class Porta {
     public void trancar()    { evento = "Trancar";    estadoAtual.trancar(); }
     public void destrancar() { evento = "Destrancar"; estadoAtual.destrancar(); }
 
+    public void setStatesDoor(StatesDoor novo) {
+        String de = estadoAtual.toString();
+        estadoAtual = novo;
+        log(de, novo.toString());
+    }
+
     public void incrementarContador(){
         contadorAberta++;
     }
@@ -40,12 +45,6 @@ public class Porta {
         eventos.add(String.format("[%s] %s | %s => %s | Aberturas = %d",
                 LocalDateTime.now().format(FMT), evento,form ,to,contadorAberta));
 
-    }
-
-    public void setStatesDoor(StatesDoor novo) {
-        String de = estadoAtual.toString();
-        estadoAtual = novo;
-        log(de, novo.toString());
     }
 
     @Override
