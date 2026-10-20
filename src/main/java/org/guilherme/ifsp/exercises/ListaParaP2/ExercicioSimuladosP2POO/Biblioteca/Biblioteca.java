@@ -84,7 +84,7 @@ Biblioteca {
             }
         }
         return emprestimo.get(usuario).stream()
-                .map(ItemComToStringCru::new)
+                .map(itemAntigo -> new ItemComToStringCru(itemAntigo))
                 .collect(Collectors.toList()); // Retorna a cópia como List<Item>
 
     }
