@@ -7,7 +7,7 @@ class Verde implements SemaforoStates {
         this.semaforo = semaforo;
     }
     public void avancar(){
-        System.out.println("Semaforo esta verde!");
+        System.out.println("Semáforo esta verde!");
         semaforo.setEstado(new Amarelo(semaforo));
     }
 

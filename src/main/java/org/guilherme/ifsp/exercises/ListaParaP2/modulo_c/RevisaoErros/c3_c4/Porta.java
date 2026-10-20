@@ -5,7 +5,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Porta {
+public class
+Porta {
     private EstadosPorta estadosPorta;
     private static final DateTimeFormatter FMT = DateTimeFormatter.ofPattern("dd/MM/yyyy  HH:mm:ss");
     private String evento = "";
