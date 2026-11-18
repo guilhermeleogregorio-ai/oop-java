@@ -19,20 +19,6 @@ abstract public class Declaracao {
 
     abstract protected double valorImposto();
 
-    public int getId() {
-        return id;
-    }
-
-
-    public double getValorJaPago() {
-        return valorJaPago;
-    }
-
-    public double getGanhoTributavel() {
-        return ganhoTributavel;
-    }
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -44,6 +30,17 @@ abstract public class Declaracao {
     @Override
     public int hashCode() {
         return Objects.hash(id, ganhoTributavel, valorJaPago);
+    }
+    public int getId() {
+        return id;
+    }
+
+    public double getValorJaPago() {
+        return valorJaPago;
+    }
+
+    public double getGanhoTributavel() {
+        return ganhoTributavel;
     }
 
     @Override

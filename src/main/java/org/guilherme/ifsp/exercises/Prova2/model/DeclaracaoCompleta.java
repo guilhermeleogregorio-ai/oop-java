@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class DeclaracaoCompleta extends Declaracao {
+    private final List<Despesa> gastos;
+
     public DeclaracaoCompleta(int id, double ganhoTributavel, double valorJaPago) {
         super(id, ganhoTributavel, valorJaPago);
         this.gastos = new ArrayList<>();
     }
 
-    private final List<Despesa> gastos;
 
         @Override
         protected double valorImposto() {
@@ -38,14 +39,14 @@ public final class DeclaracaoCompleta extends Declaracao {
 
     public void adicionarDespesa(Despesa d){
         if(d != null){
-            this.gastos.add(d);
+            gastos.add(d);
         }
 
     }
 
     public void removerDespesa(Despesa d){
         if(d != null){
-            this.gastos.remove(d);
+            gastos.remove(d);
         }
     }
 
