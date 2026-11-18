@@ -16,6 +16,7 @@ public class DeclaracaoSimplificada extends Declaracao {
         return valorDoImposto;
     }
 
+
     @Override
     public String toString() {
         return "DeclaracaoSimplificada{} " + super.toString();
