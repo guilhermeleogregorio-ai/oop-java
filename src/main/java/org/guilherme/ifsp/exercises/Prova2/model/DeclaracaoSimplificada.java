@@ -6,8 +6,14 @@ public class DeclaracaoSimplificada extends Declaracao {
     }
 
     @Override
-    public double valorImposto(){
-     return valorImposto();
+    public double valorImposto() {
+        double ganhoTributavel = getGanhoTributavel();
+        double valorJaPago = getValorJaPago();
+        double valorDoImposto = 0;
+        if (ganhoTributavel > 22847.88) {
+            valorDoImposto = (ganhoTributavel * 0.20) - valorJaPago;
+        }
+        return valorDoImposto;
     }
 
     @Override

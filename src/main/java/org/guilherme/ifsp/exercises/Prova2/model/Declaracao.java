@@ -17,9 +17,7 @@ abstract public class Declaracao {
         return  valorImposto() - valorJaPago;
     }
 
-    protected  double valorImposto(){
-        return  valorImposto();
-    }
+    abstract protected double valorImposto();
 
     public int getId() {
         return id;
