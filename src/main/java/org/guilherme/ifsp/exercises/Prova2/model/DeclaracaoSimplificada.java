@@ -6,7 +6,7 @@ public class DeclaracaoSimplificada extends Declaracao {
     }
 
     @Override
-    public double valorImposto() {
+    protected double valorImposto() {
         double ganhoTributavel = getGanhoTributavel();
         double valorJaPago = getValorJaPago();
         double valorDoImposto = 0;
