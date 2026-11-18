@@ -6,11 +6,11 @@ public class DeclaracaoSimplificada extends Declaracao {
         return super.valorAPagar();
     }
 
-    public void adicionarDespesa(Despesa){
+    public void adicionarDespesa(Despesa d){
 
     }
 
-    public void removerDespesa(Despesa){
+    public void removerDespesa(Despesa d){
 
     }
 
