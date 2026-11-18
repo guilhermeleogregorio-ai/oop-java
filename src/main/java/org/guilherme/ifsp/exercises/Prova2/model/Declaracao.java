@@ -3,9 +3,9 @@ package org.guilherme.ifsp.exercises.Prova2.model;
 import java.util.Objects;
 
 abstract public class Declaracao {
-    private int id;
-    private double ganhoTributavel;
-    private double valorJaPago;
+    private final int id;
+    private final double ganhoTributavel;
+    private final double valorJaPago;
 
     public Declaracao(int id, double ganhoTributavel, double valorJaPago) {
         this.id = id;
@@ -23,36 +23,27 @@ abstract public class Declaracao {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public double getValorJaPago() {
         return valorJaPago;
-    }
-
-    public void setValorJaPago(double valorJaPago) {
-        this.valorJaPago = valorJaPago;
     }
 
     public double getGanhoTributavel() {
         return ganhoTributavel;
     }
 
-    public void setGanhoTributavel(double ganhoTributavel) {
-        this.ganhoTributavel = ganhoTributavel;
-    }
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Declaracao that = (Declaracao) o;
-        return getId() == that.getId() && Double.compare(getGanhoTributavel(), that.getGanhoTributavel()) == 0 && Double.compare(getValorJaPago(), that.getValorJaPago()) == 0;
+        return id == that.id && Double.compare(ganhoTributavel, that.ganhoTributavel) == 0 && Double.compare(valorJaPago, that.valorJaPago) == 0;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getGanhoTributavel(), getValorJaPago());
+        return Objects.hash(id, ganhoTributavel, valorJaPago);
     }
 
     @Override
