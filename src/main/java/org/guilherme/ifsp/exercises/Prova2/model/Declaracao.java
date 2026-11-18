@@ -6,7 +6,7 @@ abstract public class Declaracao {
     private double valorJaPago;
 
 
-    final public double valorAPagar(){
+    public double valorAPagar(){
         return  valorImposto() - valorJaPago;
     }
 
