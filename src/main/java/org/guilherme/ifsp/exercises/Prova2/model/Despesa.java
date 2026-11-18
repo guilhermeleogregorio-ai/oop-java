@@ -51,12 +51,12 @@ public class Despesa {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Despesa despesa = (Despesa) o;
-        return getId() == despesa.getId() && Double.compare(getValor(), despesa.getValor()) == 0 && Objects.equals(getDescricao(), despesa.getDescricao()) && Objects.equals(getCnpj(), despesa.getCnpj());
+        return getId() == despesa.getId();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getDescricao(), getValor(), getCnpj());
+        return Objects.hashCode(getId());
     }
 
     @Override

@@ -1,10 +1,8 @@
 package org.guilherme.ifsp.exercises.Prova2.model;
 
-import org.guilherme.ifsp.exercises.Simulado2.game.MarioState;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class DeclaracaoCompleta extends Declaracao {
     public DeclaracaoCompleta(int id, double ganhoTributavel, double valorJaPago, List<Despesa> gastos) {
@@ -68,18 +66,8 @@ public class DeclaracaoCompleta extends Declaracao {
         return deducaoEducacao + deducaoSaude;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        DeclaracaoCompleta that = (DeclaracaoCompleta) o;
-        return Objects.equals(gastos, that.gastos);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), gastos);
-    }
+
 
     @Override
     public String toString() {
