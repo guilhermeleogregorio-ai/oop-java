@@ -1,8 +1,9 @@
 package org.guilherme.ifsp.exercises.Prova2.model;
 
 public class DeclaracaoCompleta extends Declaracao {
-    public double valorAPagar() {
-        return super.valorAPagar();
+    @Override
+    protected double valorImposto() {
+        return valorImposto();
     }
 
     public void adicionarDespesa(Despesa d){
