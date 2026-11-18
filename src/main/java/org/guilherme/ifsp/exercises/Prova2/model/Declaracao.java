@@ -8,10 +8,10 @@ public class Declaracao {
 
 
     public double valorAPagar(){
-
+        return  valorAPagar();
     }
 
     protected  double valorImposto(){
-
+        return  valorImposto();
     }
 }

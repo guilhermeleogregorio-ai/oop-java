@@ -15,6 +15,6 @@ public class DeclaracaoSimplificada extends Declaracao {
     }
 
     private double totalDespesasDedutiveis(){
-
+        return totalDespesasDedutiveis();
     }
 }

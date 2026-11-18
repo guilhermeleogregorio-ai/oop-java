@@ -4,7 +4,7 @@ public class DespesaEducacao extends Despesa {
     public static double DEDUCAO_MAX = 1500.0;
 
     private String registroConselho(){
-
+        return registroConselho();
     }
 
 }
