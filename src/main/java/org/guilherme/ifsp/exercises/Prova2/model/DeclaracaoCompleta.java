@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DeclaracaoCompleta extends Declaracao {
-    public DeclaracaoCompleta(int id, double ganhoTributavel, double valorJaPago, List<Despesa> gastos) {
+    public DeclaracaoCompleta(int id, double ganhoTributavel, double valorJaPago) {
         super(id, ganhoTributavel, valorJaPago);
         this.gastos = new ArrayList<>();
     }
