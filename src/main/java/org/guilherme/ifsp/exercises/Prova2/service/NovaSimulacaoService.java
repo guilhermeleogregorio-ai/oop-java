@@ -17,7 +17,7 @@ public class NovaSimulacaoService {
             throw  new EntityAlreadyExists("Simualacao já iniciada");
 
         final DeclaracaoCompleta completa = new DeclaracaoCompleta(1, ganhoTributavel, valorJaPago);
-        final DeclaracaoSimplificada simplificada = new DeclaracaoSimplificada(1, ganhoTributavel,valorJaPago);
+        final DeclaracaoSimplificada simplificada = new DeclaracaoSimplificada(2, ganhoTributavel,valorJaPago);
 
          dao.salvar(completa);
          dao.salvar(simplificada);
