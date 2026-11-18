@@ -3,7 +3,7 @@ package org.guilherme.ifsp.exercises.Prova2.model;
 import java.util.Objects;
 
 public class DespesaEducacao extends Despesa{
-    static final public double DECUCAO_MAX = 2000.0;
+    static final public double DEDUCAO_MAX = 2000.0;
     private String nomeInstituicao;
 
     public DespesaEducacao(int id, double valor, String descricao, String cnpj, String nomeInstituicao) {

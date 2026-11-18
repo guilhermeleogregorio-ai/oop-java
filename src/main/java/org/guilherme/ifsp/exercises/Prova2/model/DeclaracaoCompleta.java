@@ -1,5 +1,7 @@
 package org.guilherme.ifsp.exercises.Prova2.model;
 
+import org.guilherme.ifsp.exercises.Simulado2.game.MarioState;
+
 import java.util.List;
 
 public class DeclaracaoCompleta extends Declaracao {
@@ -12,7 +14,7 @@ public class DeclaracaoCompleta extends Declaracao {
 
     @Override
     protected double valorImposto() {
-        double ganhoTributavel = getGanhoTributavel();
+        double ganhoTributavel = getGanhoTributavel() - totalDespesasDedutiveis();
         double valorJaPago = getValorJaPago();
         double valorDoImposto = 0;
         if(ganhoTributavel >= 22847.88 && ganhoTributavel <= 33919.92){
@@ -43,7 +45,19 @@ public class DeclaracaoCompleta extends Declaracao {
     }
 
     private double totalDespesasDedutiveis(){
-        return 0.0;
+        double totalSaude = 0.0;
+        double totalEducacao = 0.0;
+        for(Despesa d : this.gastos) {
+            if (d instanceof DespesaSaude) {
+                totalSaude += d.getValor();
+            } else if (d instanceof DespesaEducacao) {
+                totalEducacao += d.getValor();
+            }
+        }
+
+        double deducaoSaude = Math.min(totalSaude, DespesaSaude.DEDUCAO_MAX);
+        double deducaoEducacao = Math.min(totalEducacao, DespesaEducacao.DEDUCAO_MAX);
+        return deducaoEducacao + deducaoSaude;
     }
 
     @Override

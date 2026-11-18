@@ -13,7 +13,7 @@ abstract public class Declaracao {
         this.valorJaPago = valorJaPago;
     }
 
-    public double valorAPagar(){
+    final public double valorAPagar(){
         return  valorImposto() - valorJaPago;
     }
 
