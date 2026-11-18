@@ -1,14 +1,13 @@
 package org.guilherme.ifsp.exercises.Prova2.model;
 
-public class Declaracao {
+abstract public class Declaracao {
     private int id;
     private double ganhoTributavel;
     private double valorJaPago;
 
 
-
-    public double valorAPagar(){
-        return  valorAPagar();
+    final public double valorAPagar(){
+        return  valorImposto() - valorJaPago;
     }
 
     protected  double valorImposto(){
