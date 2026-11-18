@@ -11,7 +11,7 @@ public class DeclaracaoSimplificada extends Declaracao {
         double valorJaPago = getValorJaPago();
         double valorDoImposto = 0;
         if (ganhoTributavel > 22847.88) {
-            valorDoImposto = (ganhoTributavel * 0.20) - valorJaPago;
+            valorDoImposto = (ganhoTributavel - 22847.88) * 0.20;
         }
         return valorDoImposto;
     }
