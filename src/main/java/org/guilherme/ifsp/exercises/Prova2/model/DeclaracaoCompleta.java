@@ -2,16 +2,17 @@ package org.guilherme.ifsp.exercises.Prova2.model;
 
 import org.guilherme.ifsp.exercises.Simulado2.game.MarioState;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class DeclaracaoCompleta extends Declaracao {
     public DeclaracaoCompleta(int id, double ganhoTributavel, double valorJaPago, List<Despesa> gastos) {
         super(id, ganhoTributavel, valorJaPago);
-        this.gastos = gastos;
+        this.gastos = new ArrayList<>();
     }
 
-    private List<Despesa> gastos;
+    private final List<Despesa> gastos;
 
         @Override
         protected double valorImposto() {
