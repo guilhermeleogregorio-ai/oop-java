@@ -2,8 +2,5 @@ package org.guilherme.ifsp.exercises.Prova2.model;
 
 public class DespesaEducacao extends Despesa{
     static public double DECUCAO_MAX = 2000.0;
-
-    private String nomeInstituicao(){
-        return nomeInstituicao();
-    }
+    private String nomeInstituicao;
 }
