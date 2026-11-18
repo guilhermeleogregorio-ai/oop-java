@@ -1,4 +1,7 @@
 package org.guilherme.ifsp.exercises.Prova2;
 
-public class DeclaracaoCompleta {
+public class DeclaracaoCompleta extends Declaracao {
+    public double valorImposto(){
+
+    }
 }
