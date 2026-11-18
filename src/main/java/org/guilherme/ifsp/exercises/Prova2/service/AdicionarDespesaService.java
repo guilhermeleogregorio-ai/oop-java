@@ -6,10 +6,10 @@ import org.guilherme.ifsp.exercises.Prova2.model.DespesaEducacao;
 import org.guilherme.ifsp.exercises.Prova2.model.DespesaSaude;
 import org.guilherme.ifsp.exercises.Prova2.persistence.DeclaracaoDAO;
 
-public class AdicionarDespesasService {
+public class AdicionarDespesaService {
     private final DeclaracaoDAO dao;
 
-    public AdicionarDespesasService(DeclaracaoDAO dao) {
+    public AdicionarDespesaService(DeclaracaoDAO dao) {
         this.dao = dao;
     }
 

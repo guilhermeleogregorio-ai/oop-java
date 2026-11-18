@@ -14,11 +14,14 @@ public class ExcluirSimulacaoService {
         this.dao = dao;
     }
 
-    public void excluir(int id){
-        final DeclaracaoCompleta completa = (DeclaracaoCompleta) dao.buscarPorId(1).orElseThrow(() -> new NoSuchElementException("Simulacao não encintrada"));
-        final DeclaracaoSimplificada simplificada = (DeclaracaoSimplificada) dao.buscarPorId(1).orElseThrow(() -> new NoSuchElementException("Simulacao não encintrada"));
+    public void excluir() {
+        final Declaracao simplificada = dao.buscarPorId(1)
+                .orElseThrow(() -> new NoSuchElementException("Simulação não encontrada."));
+        final Declaracao completa = dao.buscarPorId(2)
+                .orElseThrow(() -> new NoSuchElementException("Simulação não encontrada."));
 
-        dao.remover();
-
+        dao.remover(simplificada);
+        dao.remover(completa);
     }
+
 }
