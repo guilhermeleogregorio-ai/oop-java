@@ -1,11 +1,11 @@
 package org.guilherme.ifsp.exercises.Prova2.service;
 
-import org.guilherme.ifsp.exercises.Prova2.persistence.DeclaracaoDaoImpl;
+import org.guilherme.ifsp.exercises.Prova2.persistence.DeclaracaoDAO;
 
 public class NovaSimulacaoService {
-    private final DeclaracaoDaoImpl dao;
+    private final DeclaracaoDAO dao;
 
-    public NovaSimulacaoService(DeclaracaoDaoImpl dao){
+    public NovaSimulacaoService(DeclaracaoDAO dao){
         this.dao = dao;
     }
 }
