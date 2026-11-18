@@ -1,6 +1,7 @@
 package org.guilherme.ifsp.exercises.Prova2.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public final class DeclaracaoCompleta extends Declaracao {
@@ -49,6 +50,9 @@ public final class DeclaracaoCompleta extends Declaracao {
             gastos.remove(d);
         }
     }
+    public List<Despesa> getGastos() {
+        return Collections.unmodifiableList(gastos);
+    }
 
     private double totalDespesasDedutiveis(){
         double totalSaude = 0.0;
@@ -67,11 +71,17 @@ public final class DeclaracaoCompleta extends Declaracao {
     }
 
     private double despesasEducacao(){
-        return  0.0;
+        return gastos.stream()
+                .filter(d -> d instanceof DespesaEducacao)
+                .mapToDouble(Despesa::getValor)
+                .sum();
     }
 
     private double despesasSaude(){
-        return  0.0;
+        return  gastos.stream()
+                .filter(d -> d instanceof DespesaSaude)
+                .mapToDouble(Despesa::getValor)
+                .sum();
     }
 
 

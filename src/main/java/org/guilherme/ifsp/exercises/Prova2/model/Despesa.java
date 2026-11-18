@@ -2,7 +2,7 @@ package org.guilherme.ifsp.exercises.Prova2.model;
 
 import java.util.Objects;
 
-public class Despesa {
+public abstract class Despesa {
     private int id;
     private String descricao;
     private double valor;
@@ -49,6 +49,7 @@ public class Despesa {
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Despesa despesa = (Despesa) o;
         return getId() == despesa.getId();
