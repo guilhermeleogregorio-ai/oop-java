@@ -1,6 +1,6 @@
-package org.guilherme.ifsp.exercises.Prova2;
+package org.guilherme.ifsp.exercises.Prova2.model;
 
-public class DeclaracaoSimplificada extends Declaracao{
+public class DeclaracaoSimplificada extends Declaracao {
     @Override
     public double valorAPagar() {
         return super.valorAPagar();

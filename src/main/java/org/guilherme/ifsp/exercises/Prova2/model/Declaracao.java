@@ -1,4 +1,4 @@
-package org.guilherme.ifsp.exercises.Prova2;
+package org.guilherme.ifsp.exercises.Prova2.model;
 
 public class Declaracao {
     private int id;
