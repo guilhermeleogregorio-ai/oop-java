@@ -15,6 +15,8 @@ public class Despesa {
         this.cnpj = cnpj;
     }
 
+
+
     public int getId() {
         return id;
     }
