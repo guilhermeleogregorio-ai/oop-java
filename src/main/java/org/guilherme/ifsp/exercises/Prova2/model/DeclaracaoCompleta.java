@@ -13,24 +13,30 @@ public class DeclaracaoCompleta extends Declaracao {
 
     private List<Despesa> gastos;
 
-    @Override
-    protected double valorImposto() {
-        double ganhoTributavel = getGanhoTributavel() - totalDespesasDedutiveis();
-        double valorJaPago = getValorJaPago();
-        double valorDoImposto = 0;
-        if(ganhoTributavel >= 22847.88 && ganhoTributavel <= 33919.92){
-            valorDoImposto = (33919.92 - 22847.88) * 0.075;
-        } else if (ganhoTributavel >= 33919.93 && ganhoTributavel <= 45012.72) {
-            valorDoImposto = (45012.72 - 33919.93) * 0.15;
-        } else if(ganhoTributavel >= 45012.73 && ganhoTributavel <= 55976.16){
-            valorDoImposto = (55976.16 - 45012.73) * 0.225;
-        } else if (ganhoTributavel > 55976.16) {
-            valorDoImposto = 55976.16 * 0.275;
-        } else{
-            valorDoImposto = 0;
+        @Override
+        protected double valorImposto() {
+            double baseCalculo = getGanhoTributavel() - totalDespesasDedutiveis();
+            double imposto = 0.0;
+
+            if (baseCalculo > 55976.16) {
+                imposto += (baseCalculo - 55976.16) * 0.275;
+                baseCalculo = 55976.16;
+            }
+            if (baseCalculo > 45012.72) {
+                imposto += (baseCalculo - 45012.72) * 0.225;
+                baseCalculo = 45012.72;
+            }
+            if (baseCalculo > 33919.92) {
+                imposto += (baseCalculo - 33919.92) * 0.15;
+                baseCalculo = 33919.92;
+            }
+            if (baseCalculo > 22847.88) {
+                imposto += (baseCalculo - 22847.88) * 0.075;
+            }
+
+            return imposto;
         }
-        return valorDoImposto;
-    }
+
 
     public void adicionarDespesa(Despesa d){
         if(d != null){
