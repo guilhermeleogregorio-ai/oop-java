@@ -66,7 +66,13 @@ public final class DeclaracaoCompleta extends Declaracao {
         return deducaoEducacao + deducaoSaude;
     }
 
+    private double despesasEducacao(){
+        return  0.0;
+    }
 
+    private double despesasSaude(){
+        return  0.0;
+    }
 
 
     @Override
