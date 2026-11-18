@@ -20,19 +20,6 @@ public class DespesaEducacao extends Despesa{
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        DespesaEducacao that = (DespesaEducacao) o;
-        return Objects.equals(getNomeInstituicao(), that.getNomeInstituicao());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), getNomeInstituicao());
-    }
-
-    @Override
     public String toString() {
         return "DespesaEducacao{" +
                 "nomeInstituicao='" + nomeInstituicao + '\'' +
