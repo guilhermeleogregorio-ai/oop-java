@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Optional;
 
 public class DeclaracaoDaoImpl implements DeclaracaoDAO{
-    private final Map<Integer , Declaracao> db = new LinkedHashMap<>();
+    private static final Map<Integer , Declaracao> db = new LinkedHashMap<>();
 
 
     @Override

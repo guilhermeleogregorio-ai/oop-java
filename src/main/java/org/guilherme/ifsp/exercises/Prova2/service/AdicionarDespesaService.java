@@ -13,17 +13,16 @@ public class AdicionarDespesaService {
         this.dao = dao;
     }
 
-    public void adicionar(int id, double valor, String descricao, String cnpj, String info, String tipo) {
-        final DeclaracaoCompleta completa = (DeclaracaoCompleta) dao.buscarPorId(id)
+    public void adicionar(int idDespesa, double valor, String descricao,
+                          String cnpj, String info, TipoDespesa tipo) {
+        DeclaracaoCompleta completa = (DeclaracaoCompleta) dao.buscarPorId(1)
                 .orElseThrow(() -> new IllegalStateException("Simulação não iniciada"));
 
         Despesa despesa = (tipo == TipoDespesa.EDUCACAO)
-                ? new DespesaEducacao(id,valor,descricao,cnpj,info)
-                : new DespesaSaude(id, valor,descricao,cnpj,info);
+                ? new DespesaEducacao(idDespesa, valor, descricao, cnpj, info)
+                : new DespesaSaude(idDespesa, valor, descricao, cnpj, info);
 
         completa.adicionarDespesa(despesa);
-        dao.salvar(despesa);
-
-        // Próximos passos: instanciar a despesa conforme o 'tipo', adicionar em 'completa' e atualizar no 'dao'
+        dao.atualizar(completa);
     }
 }

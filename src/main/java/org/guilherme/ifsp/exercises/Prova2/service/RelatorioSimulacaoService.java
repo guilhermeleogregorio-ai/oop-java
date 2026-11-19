@@ -17,10 +17,10 @@ public class RelatorioSimulacaoService {
 
         public String criarRelatorio() {
             // Considerando ID 1 = Simplificada e ID 2 = Completa
-            DeclaracaoSimplificada simplificada = (DeclaracaoSimplificada) dao.buscarPorId(1)
+            DeclaracaoSimplificada simplificada = (DeclaracaoSimplificada) dao.buscarPorId(2)
                     .orElseThrow(() -> new NoSuchElementException("Declaração simplificada não encontrada."));
 
-            DeclaracaoCompleta completa = (DeclaracaoCompleta) dao.buscarPorId(2)
+            DeclaracaoCompleta completa = (DeclaracaoCompleta) dao.buscarPorId(1)
                     .orElseThrow(() -> new NoSuchElementException("Declaração completa não encontrada."));
 
             StringBuilder relatorio = new StringBuilder();
