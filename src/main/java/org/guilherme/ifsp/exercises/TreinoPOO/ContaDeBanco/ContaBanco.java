@@ -28,23 +28,27 @@ public class ContaBanco {
 
     public void fecharConta(){
         if(saldo != 0){
-            throw new IllegalStateException("Não é possível fechar conta com saldo disponível. Favor sacar todo o saldo");
+            throw new RegraNegocioException("Não é possível fechar conta com saldo disponível. Favor sacar todo o saldo");
         }
         this.status = false;
     }
 
     public double depositar(double valor){
         if(!this.status){
-            throw new IllegalStateException("Sua conta não foi aberta");
+            throw new RegraNegocioException("Sua conta não foi aberta");
         }
         if(valor < 0){
-            throw new IllegalStateException("O valor do depósito deve ser maior que 0");
+            throw new RegraNegocioException("O valor do depósito deve ser maior que 0");
         }
         this.saldo += valor;
         return this.saldo;
     }
 
     public double sacar(double valor){
+        if(valor > saldo){
+            throw new RegraNegocioException("Não é possível sacar um valor maior que o saldo da conta");
+        }
+        this.saldo -= valor;
         return this.saldo;
     }
 
