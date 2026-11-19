@@ -45,6 +45,9 @@ public class ContaBanco {
     }
 
     public double sacar(double valor){
+        if(!status){
+            throw new RegraNegocioException("Conta não existe");
+        }
         if(valor > saldo){
             throw new RegraNegocioException("Não é possível sacar um valor maior que o saldo da conta");
         }
