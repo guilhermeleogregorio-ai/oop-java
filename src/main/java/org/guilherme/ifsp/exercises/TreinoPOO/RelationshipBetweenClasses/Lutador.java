@@ -11,24 +11,22 @@ public class Lutador {
     private int derotas;
     private int empates;
 
-    public Lutador(String nome, String nacionalidade, int idade, double peso, double altura, String categoria) {
+    public Lutador(String nome, String nacionalidade, int idade, double altura, double peso, int vitorias, int derotas, int empates) {
         this.nome = nome;
         this.nacionalidade = nacionalidade;
         this.idade = idade;
-        this.peso = peso;
         this.altura = altura;
-        this.categoria = categoria;
-        this.vitorias = 0;
-        this.derotas = 0;
-        this.empates = 0;
+        this.peso = peso;
+        this.vitorias = vitorias;
+        this.derotas = derotas;
+        this.empates = empates;
+    }
+
+    public void apresentar() {
 
     }
 
-    public void apresentar(){
-
-    }
-
-    public void status(){
+    public void status() {
         System.out.println("Nome :" + getNome());
         System.out.println("Nacionalidade :" + getNacionalidade());
         System.out.println("Idade :" + getIdade());
@@ -39,15 +37,15 @@ public class Lutador {
         System.out.println("Empates :" + getEmpates());
     }
 
-    public void ganharLuta(){
+    public void ganharLuta() {
         this.setVitorias(this.getVitorias() + 1);
     }
 
-    public void perdeLuta(){
+    public void perdeLuta() {
         this.setDerotas(this.getDerotas() + 1);
     }
 
-    public void empatarLuta(){
+    public void empatarLuta() {
         this.setEmpates(this.getEmpates() + 1);
     }
 
@@ -89,14 +87,7 @@ public class Lutador {
 
     public void setPeso(double peso) {
         this.peso = peso;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+        setCategoria();
     }
 
     public int getVitorias() {
@@ -121,5 +112,24 @@ public class Lutador {
 
     public void setEmpates(int empates) {
         this.empates = empates;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        if(peso < 52.2){
+            categoria = "Inválido";
+        } else if (peso <= 70.3) {
+            categoria = "Leve";
+        } else if (peso <= 83.9) {
+            categoria = "Médio";
+        } else if (peso <= 120.2) {
+            categoria = "Pesado";
+        } else {
+            categoria = "Inválido";
+        }
+        this.categoria = categoria;
     }
 }
