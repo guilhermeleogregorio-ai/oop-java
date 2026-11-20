@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class ContaBanco {
     private final int numConta;
-    private TipoConta tipo;
+    protected TipoConta tipo;
     private final String dono;
     private double saldo;
     private boolean status;

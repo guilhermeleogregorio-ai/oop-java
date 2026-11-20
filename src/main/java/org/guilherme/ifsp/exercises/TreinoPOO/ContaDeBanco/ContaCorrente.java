@@ -9,6 +9,7 @@ public class ContaCorrente extends ContaBanco{
     @Override
     public void abrirConta() {
         super.abrirConta();
+        this.setSaldo(50.0);
     }
 
     @Override
