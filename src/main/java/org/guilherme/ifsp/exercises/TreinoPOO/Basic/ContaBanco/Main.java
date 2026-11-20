@@ -1,4 +1,4 @@
-package org.guilherme.ifsp.exercises.TreinoPOO.ContaDeBanco;
+package org.guilherme.ifsp.exercises.TreinoPOO.Basic.ContaBanco;
 
 public class Main {
     public static void main(String[] args) {

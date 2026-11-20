@@ -1,6 +1,6 @@
-package org.guilherme.ifsp.exercises.TreinoPOO.ContaDeBanco;
+package org.guilherme.ifsp.exercises.TreinoPOO.Basic.ContaBanco;
 
-public class ContaCorrente extends ContaBanco{
+public class ContaCorrente extends ContaBanco {
 
     public ContaCorrente(int numConta, String dono)  {
         super(numConta, dono, TipoConta.CORRENTE, 0.0);

@@ -1,4 +1,4 @@
-package org.guilherme.ifsp.exercises.TreinoPOO.ContaDeBanco;
+package org.guilherme.ifsp.exercises.TreinoPOO.Basic.ContaBanco;
 
 
 import java.util.Objects;
