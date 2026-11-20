@@ -10,4 +10,10 @@ public class ContaCorrente extends ContaBanco{
     public void abrirConta() {
         super.abrirConta();
     }
+
+    @Override
+    public void pagarMensal() {
+        super.pagarMensal();
+        this.sacar(12.0);
+    }
 }

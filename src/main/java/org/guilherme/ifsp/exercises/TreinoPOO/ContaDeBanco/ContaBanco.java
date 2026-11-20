@@ -50,6 +50,9 @@ public class ContaBanco {
         if(!status){
             throw new RegraNegocioException("Conta não existe");
         }
+        if(valor <= 0){
+            throw new RegraNegocioException("O valor de saque deve ser maior que 0");
+        }
         if(valor > saldo){
             throw new RegraNegocioException("Não é possível sacar um valor maior que o saldo da conta");
         }
@@ -58,11 +61,8 @@ public class ContaBanco {
     }
 
     public void pagarMensal(){
-        if(tipo == TipoConta.CORRENTE){
-            saldo = saldo - 12.0;
-        }
-        if(tipo == TipoConta.POUPANCA){
-            saldo = saldo - 20.0;
+        if (!this.status) {
+            throw new RegraNegocioException("Não é possível cobrar mensalidade de uma conta fechada.");
         }
     }
 
