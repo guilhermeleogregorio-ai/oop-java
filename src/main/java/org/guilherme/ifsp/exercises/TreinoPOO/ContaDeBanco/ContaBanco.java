@@ -55,8 +55,14 @@ public class ContaBanco {
         return this.saldo;
     }
 
-    public double pagarMensal(double valor){
-        return 0.0;
+    public double pagarMensal(TipoConta tipo){
+        if(tipo == TipoConta.CORRENTE){
+            saldo = saldo - 12.0;
+        }
+        if(tipo == TipoConta.POUPANCA){
+            saldo = saldo - 20.0;
+        }
+        return saldo;
     }
 
     public Enum getTipo() {
