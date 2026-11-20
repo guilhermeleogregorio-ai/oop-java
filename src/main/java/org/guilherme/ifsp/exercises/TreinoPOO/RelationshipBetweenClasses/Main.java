@@ -10,9 +10,10 @@ public class Main {
         L[4] = new Lutador("Pedro","Brasil",38,1.95,98.2,10,5,2);
         L[5] = new Lutador("Pitte","Eua",25,1.78,78.5,13,5,1);
 
-        for(int i = 0 ; i < 5 ; i++){
-            L[i].apresentar();
-            System.out.println("----------------------------");
-        }
+        Luta UEC01 = new Luta();
+        UEC01.marcarLuta(L[0],L[1]);
+        UEC01.lutar();
+
+
     }
 }
