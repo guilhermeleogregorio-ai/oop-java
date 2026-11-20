@@ -12,8 +12,16 @@ public class Luta {
 
 
 
-    public void marcarLuta(){
-
+    public void marcarLuta(Lutador L1,Lutador L2){
+        if(L1.getCategoria().equals(L2.getCategoria()) && L1 != L2){
+            this.aprovada = true;
+            this.desafiado = L1;
+            this.desafiante = L2;
+        }else{
+            this.aprovada = false;
+            this.desafiado = null;
+            this.desafiante = null;
+        }
     }
 
     public void lutar(){
