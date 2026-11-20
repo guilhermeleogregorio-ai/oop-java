@@ -92,7 +92,7 @@ public class Lutador {
 
     public void setPeso(double peso) {
         this.peso = peso;
-        setCategoria();
+        this.setCategoria();
     }
 
     public int getVitorias() {
@@ -123,7 +123,7 @@ public class Lutador {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria() {
         if(peso < 52.2){
             categoria = "Inválido";
         } else if (peso <= 70.3) {
@@ -135,6 +135,5 @@ public class Lutador {
         } else {
             categoria = "Inválido";
         }
-        this.categoria = categoria;
     }
 }
