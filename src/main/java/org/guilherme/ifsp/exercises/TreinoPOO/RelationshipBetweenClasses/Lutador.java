@@ -23,14 +23,19 @@ public class Lutador {
     }
 
     public void apresentar() {
+        System.out.println("Nome :" + getNome());
+        System.out.println("Nacionalidade :" + getNacionalidade());
+        System.out.println("Idade :" + getIdade());
+        System.out.println("Peso :" + getPeso());
+        System.out.println("Categoria :" + getCategoria());
+        System.out.println("Vitorias :" + getVitorias());
+        System.out.println("Derrotas :" + getDerotas());
+        System.out.println("Empates :" + getEmpates());
 
     }
 
     public void status() {
         System.out.println("Nome :" + getNome());
-        System.out.println("Nacionalidade :" + getNacionalidade());
-        System.out.println("Idade :" + getIdade());
-        System.out.println("Peso :" + getPeso());
         System.out.println("Categoria :" + getCategoria());
         System.out.println("Vitorias :" + getVitorias());
         System.out.println("Derrotas :" + getDerotas());
