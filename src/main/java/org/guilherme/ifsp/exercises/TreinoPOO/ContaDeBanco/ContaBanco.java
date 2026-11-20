@@ -27,6 +27,9 @@ public class ContaBanco {
     }
 
     public void fecharConta(){
+        if(!this.status){
+            throw new RegraNegocioException("A conta já esta fechada");
+        }
         if(saldo != 0){
             throw new RegraNegocioException("Não é possível fechar conta com saldo disponível. Favor sacar todo o saldo");
         }
