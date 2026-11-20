@@ -11,11 +11,11 @@ public class ContaBanco {
     private boolean status;
 
 
-    public ContaBanco(int numConta, String dono, TipoConta tipo, double saldoInicial) {
+    public ContaBanco(int numConta, String dono, TipoConta tipo, double saldo) {
         this.numConta = numConta;
         this.dono = dono;
         this.tipo =  tipo;
-        this.saldo = saldoInicial;
+        this.saldo = 0;
         this.status = false;
     }
 
