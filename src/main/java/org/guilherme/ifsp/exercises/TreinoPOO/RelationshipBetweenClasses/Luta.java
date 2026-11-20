@@ -34,14 +34,17 @@ public class Luta {
                     System.out.println("Empatou!");
                     desafiado.empatarLuta();
                     desafiante.empatarLuta();
+                    break;
                 case 1:
                     System.out.println("Desafiante %s ganhou!" + desafiante.getNome());
                     desafiante.ganharLuta();
                     desafiado.perdeLuta();
+                    break;
                 case 2:
                     System.out.println("Desafiado %s ganhou!" + desafiante.getNome());
                     desafiado.ganharLuta();
                     desafiante.perdeLuta();
+                    break;
             }
         }else{
             System.out.println("Luta não pode acontecer");
