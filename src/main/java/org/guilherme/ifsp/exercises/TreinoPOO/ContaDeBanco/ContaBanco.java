@@ -37,7 +37,7 @@ public class ContaBanco {
         if(!this.status){
             throw new RegraNegocioException("Sua conta não foi aberta");
         }
-        if(valor < 0){
+        if(valor <= 0){
             throw new RegraNegocioException("O valor do depósito deve ser maior que 0");
         }
         this.saldo += valor;
