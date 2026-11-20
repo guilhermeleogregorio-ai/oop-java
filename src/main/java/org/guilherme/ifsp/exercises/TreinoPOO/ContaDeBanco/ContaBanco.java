@@ -11,19 +11,19 @@ public class ContaBanco {
     private boolean status;
 
 
-    public ContaBanco(int numConta, String dono, TipoConta tipo, double saldoInicial, boolean status) {
+    public ContaBanco(int numConta, String dono, TipoConta tipo, double saldoInicial) {
         this.numConta = numConta;
         this.dono = dono;
         this.tipo =  tipo;
         this.saldo = saldoInicial;
-        this.status = status;
+        this.status = false;
     }
 
-    public void abrirConta(TipoConta tipo){
-        if(!status){
-            this.status = true;
-            this.tipo = tipo;
+    public void abrirConta(){
+        if(this.status){
+            throw new RegraNegocioException("Essa conta já existe");
         }
+        this.status = true;
     }
 
     public void fecharConta(){
@@ -33,7 +33,7 @@ public class ContaBanco {
         this.status = false;
     }
 
-    public double depositar(double valor){
+    public void depositar(double valor){
         if(!this.status){
             throw new RegraNegocioException("Sua conta não foi aberta");
         }
@@ -41,7 +41,6 @@ public class ContaBanco {
             throw new RegraNegocioException("O valor do depósito deve ser maior que 0");
         }
         this.saldo += valor;
-        return this.saldo;
     }
 
     public double sacar(double valor){
@@ -55,17 +54,16 @@ public class ContaBanco {
         return this.saldo;
     }
 
-    public double pagarMensal(TipoConta tipo){
+    public void pagarMensal(){
         if(tipo == TipoConta.CORRENTE){
             saldo = saldo - 12.0;
         }
         if(tipo == TipoConta.POUPANCA){
             saldo = saldo - 20.0;
         }
-        return saldo;
     }
 
-    public Enum getTipo() {
+    public TipoConta getTipo() {
         return tipo;
     }
 
