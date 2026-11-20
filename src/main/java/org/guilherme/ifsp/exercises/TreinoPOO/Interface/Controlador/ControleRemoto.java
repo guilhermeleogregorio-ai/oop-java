@@ -15,7 +15,7 @@ public class ControleRemoto implements Controlador{
         return volume;
     }
 
-    public void setVolume(int volume) {
+    private void setVolume(int volume) {
         this.volume = volume;
     }
 
@@ -23,7 +23,7 @@ public class ControleRemoto implements Controlador{
         return ligado;
     }
 
-    public void setLigado(boolean ligado) {
+    private void setLigado(boolean ligado) {
         this.ligado = ligado;
     }
 
@@ -31,7 +31,7 @@ public class ControleRemoto implements Controlador{
         return tocando;
     }
 
-    public void setTocando(boolean tocando) {
+    private void setTocando(boolean tocando) {
         this.tocando = tocando;
     }
 
