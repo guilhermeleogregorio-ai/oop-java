@@ -13,6 +13,9 @@ public class Main {
         Luta UEC01 = new Luta();
         UEC01.marcarLuta(L[0],L[1]);
         UEC01.lutar();
+        Luta EUC02 = new Luta();
+        EUC02.marcarLuta(L[3],L[5]);
+        EUC02.lutar();
 
 
     }
