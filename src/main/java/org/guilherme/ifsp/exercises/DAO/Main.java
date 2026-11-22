@@ -29,5 +29,11 @@ public class Main {
         System.out.println(employee);
 
 
+        Employee employee1 = new Employee(0, 25564, "Pedro", "Black",5);
+        int resultUpdate = employeeDAO.update(employee1);
+        System.out.println(employee1);
+
+
+
     }
 }

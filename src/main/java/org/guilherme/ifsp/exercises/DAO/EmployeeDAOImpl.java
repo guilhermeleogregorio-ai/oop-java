@@ -62,7 +62,18 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     //UPDATE
     @Override
     public int update(Employee employee) throws SQLException {
-        return 0;
+
+        String sql = "UPDATE employee SET employee_id = ? ,first_name = ?,last_name = ?,depto_id = ? WHERE id = ?";
+        try (Connection c = Database.getConnection();
+             PreparedStatement ps = c.prepareStatement(sql)) {
+
+            ps.setInt(1, employee.getEmployeeId());
+            ps.setString(2, employee.getFirstName());
+            ps.setString(3, employee.getLastName());
+            ps.setInt(4, employee.getDepId());
+            ps.setInt(5,employee.getId());
+            return ps.executeUpdate();
+        }
     }
     //DELETE
     @Override
