@@ -42,4 +42,15 @@ public class employeeController {
             return "Erro  ao atualizar: " + e.getMessage();
         }
     }
+
+    public String deletar(int id){
+        try{
+            Employee emp = new Employee(id,0,"","",0);
+            int linhas = employeeDAO.delete(emp);
+            return linhas > 0 ? "Deletado com sucesso! " : "Funcionario não encontrado!  ";
+        }catch (Exception e){
+            return "Erro ao deletar: " + e.getMessage();
+        }
+    }
+
 }
