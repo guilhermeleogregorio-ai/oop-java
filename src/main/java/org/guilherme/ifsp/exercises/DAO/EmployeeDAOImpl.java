@@ -78,6 +78,14 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     //DELETE
     @Override
     public int delete(Employee employee) {
+        String sql = "DELETE FROM employee WHERE id = ?";
+
+        try(Connection c = Database.getConnection();
+            PreparedStatement ps = c.prepareStatement(sql)){
+            ps.setInt(1,employee.getId());
+            return ps.executeUpdate();
+        }catch (SQLException e){ e.printStackTrace();}
         return 0;
     }
+
 }
