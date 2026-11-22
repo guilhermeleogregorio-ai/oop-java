@@ -58,4 +58,12 @@ public class ProductRepository {
         }catch (SQLException e ){e.printStackTrace();}
     }
     //DELETE
+    public void delete(String sku) {
+        String sql = "DELETE FROM products WHERE code = ?";
+        try (Connection c = Database.connect();
+             PreparedStatement st = c.prepareStatement(sql)) {
+            st.setString(1, sku);
+            st.executeUpdate();
+        } catch (SQLException e) {e.printStackTrace();}
+    }
 }
