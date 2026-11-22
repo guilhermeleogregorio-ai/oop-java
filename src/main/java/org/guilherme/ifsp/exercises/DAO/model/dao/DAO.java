@@ -1,4 +1,4 @@
-package org.guilherme.ifsp.exercises.DAO;
+package org.guilherme.ifsp.exercises.DAO.model.dao;
 
 import java.sql.SQLException;
 import java.util.List;

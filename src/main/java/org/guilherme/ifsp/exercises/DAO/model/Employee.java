@@ -1,4 +1,4 @@
-package org.guilherme.ifsp.exercises.DAO;
+package org.guilherme.ifsp.exercises.DAO.model;
 
 public class Employee {
     private int id;

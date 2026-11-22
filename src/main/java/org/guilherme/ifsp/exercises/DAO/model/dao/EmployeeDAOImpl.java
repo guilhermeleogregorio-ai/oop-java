@@ -1,4 +1,6 @@
-package org.guilherme.ifsp.exercises.DAO;
+package org.guilherme.ifsp.exercises.DAO.model.dao;
+
+import org.guilherme.ifsp.exercises.DAO.model.Employee;
 
 import java.sql.Connection;
 
@@ -19,7 +21,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         String sql = "SELECT id,employee_id,first_name,last_name,depto_id FROM employee WHERE id = ?";
 
         try(Connection con = (Connection) Database.getConnection();
-        PreparedStatement ps = con.prepareStatement(sql)) {
+            PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, id);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {

@@ -1,4 +1,8 @@
-package org.guilherme.ifsp.exercises.DAO;
+package org.guilherme.ifsp.exercises.DAO.view;
+
+import org.guilherme.ifsp.exercises.DAO.model.Employee;
+import org.guilherme.ifsp.exercises.DAO.model.dao.EmployeeDAO;
+import org.guilherme.ifsp.exercises.DAO.model.dao.EmployeeDAOImpl;
 
 import java.sql.SQLException;
 import java.util.List;
