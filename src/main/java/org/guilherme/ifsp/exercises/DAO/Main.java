@@ -14,11 +14,20 @@ public class Main {
 //        if(con != null){
 //            System.out.println("Database connection sucessfull");
 //        }
-        Database.init();
+//        Database.init();
+//        EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+//
+//        Employee employee = employeeDAO.get(1);
+//
+//        System.out.println(employee);
+
         EmployeeDAO employeeDAO = new EmployeeDAOImpl();
 
-        Employee employee = employeeDAO.get(1);
+        Employee employee = new Employee(0 , 25564, "Jon", "Don",5);
 
+        int result = employeeDAO.insert(employee);
         System.out.println(employee);
+
+
     }
 }
