@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
@@ -25,7 +26,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             int oid = rs.getInt("id");
             int employeeId = rs.getInt("employee_id");
             String firstName = rs.getString("first_name");
-            String lastName = rs.getString("lasrt_name");
+            String lastName = rs.getString("last_name");
             int deptId = rs.getInt("depto_id");
 
             employee = new Employee(oid,employeeId,firstName,lastName,deptId);
@@ -35,12 +36,27 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     //SELECT
     @Override
     public List<Employee> getAll() throws SQLException {
-        return List.of();
+        List<Employee> list = new ArrayList<>();
+        String sql = "SELECT id,employee_id,first_name,last_name,depto_id FROM employee  ";
+
+        try(Connection c = Database.getConnection();
+            PreparedStatement ps = c.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery()) {
+                while (rs.next()){
+                    list.add(new Employee(
+                            rs.getInt("id"),
+                            rs.getInt("employee_id"),
+                            rs.getString("first_name"),
+                            rs.getString("last_name"),
+                            rs.getInt("depto_id")));
+                }
+        }catch (SQLException e){ e.printStackTrace();}
+            return list;
     }
     //CREATE - INSERT
     @Override
     public int save(Employee employee) throws SQLException {
-        return 0;
+        return insert(employee);
     }
     // INSERT
     @Override
@@ -53,7 +69,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
                 ps.setInt(1, employee.getEmployeeId());
                 ps.setString(2, employee.getFirstName());
-                ps.setString(3, employee.getFirstName());
+                ps.setString(3, employee.getLastName());
                 ps.setInt(4, employee.getDepId());
                 int rs = ps.executeUpdate();
                 return rs;
