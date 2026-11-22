@@ -29,4 +29,17 @@ public class employeeController {
             return List.of();
         }
     }
+
+    public String atualizar(int id,  int employeeId, String firstName, String lastName, int depId){
+        if(id <= 0){
+            return "Erro: ID inválido para atualização";
+        }
+        try {
+            Employee emp = new Employee(id,employeeId,firstName,lastName,depId);
+            int linhas = employeeDAO.update(emp);
+            return linhas > 0 ? "Atualizado com sucesso!" : "Funcionario não encontrado";
+        }catch (SQLException e){
+            return "Erro  ao atualizar: " + e.getMessage();
+        }
+    }
 }
