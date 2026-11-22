@@ -1,5 +1,6 @@
 package org.guilherme.ifsp.exercises.DAO.view;
 
+import org.guilherme.ifsp.exercises.DAO.controller.employeeController;
 import org.guilherme.ifsp.exercises.DAO.model.Employee;
 import org.guilherme.ifsp.exercises.DAO.model.dao.EmployeeDAO;
 import org.guilherme.ifsp.exercises.DAO.model.dao.EmployeeDAOImpl;
@@ -9,27 +10,24 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-                EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+            employeeController controller = new employeeController();
 
                 // 1. CREATE (Insert)
                 System.out.println("--- 1. INSERINDO ---");
-                Employee novo = new Employee(0, 25564, "Jon", "Don", 5);
-                int linhasInseridas = employeeDAO.insert(novo);
-                System.out.println("Linhas inseridas: " + linhasInseridas);
+                System.out.println(controller.cadastrar( 25564, "Jon", "Don", 5));
 
                 // 2. READ ALL (GetAll) - Pega todos para descobrir o ID gerado pelo banco
                 System.out.println("\n--- 2. LISTANDO TODOS ---");
-                List<Employee> lista = employeeDAO.getAll();
+                List<Employee> lista = controller.listarTodos();
                 lista.forEach(System.out::println);
 
                 // Pega o último funcionário inserido na lista para usar o ID real dele nos próximos testes
-                Employee salvoNoBanco = lista.get(lista.size() - 1);
-                int idReal = salvoNoBanco.getId();
+                int idReal =  lista.get(lista.size() - 1).getDepId();
+
 
                 // 3. READ ONE (Get)
                 System.out.println("\n--- 3. BUSCANDO POR ID (" + idReal + ") ---");
-                Employee buscado = employeeDAO.get(idReal);
-                System.out.println("Encontrado: " + buscado);
+                System.out.println("Encontrado: " + controller.bu
 
                 // 4. UPDATE
                 System.out.println("\n--- 4. ATUALIZANDO ---");

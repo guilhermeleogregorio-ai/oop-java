@@ -30,6 +30,15 @@ public class employeeController {
         }
     }
 
+    public Employee buscarPorId(int id){
+        try {
+            return employeeDAO.get(id);
+        }catch (SQLException e){
+            System.err.println("Erro ao buscar: " + e.getMessage());
+            return null;
+        }
+    }
+
     public String atualizar(int id,  int employeeId, String firstName, String lastName, int depId){
         if(id <= 0){
             return "Erro: ID inválido para atualização";
