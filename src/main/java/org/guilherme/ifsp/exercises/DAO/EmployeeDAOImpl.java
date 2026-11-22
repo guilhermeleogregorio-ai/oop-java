@@ -14,22 +14,24 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     //SELECT
     @Override
     public Employee get(int id) throws SQLException {
-        Connection con = (Connection) Database.getConnection();
         Employee employee = null;
 
         String sql = "SELECT id,employee_id,first_name,last_name,depto_id FROM employee WHERE id = ?";
 
-        PreparedStatement ps = con.prepareStatement(sql);
-        ps.setInt(1,id);
-        ResultSet rs = ps.executeQuery();
-        if(rs.next()){
-            int oid = rs.getInt("id");
-            int employeeId = rs.getInt("employee_id");
-            String firstName = rs.getString("first_name");
-            String lastName = rs.getString("last_name");
-            int deptId = rs.getInt("depto_id");
+        try(Connection con = (Connection) Database.getConnection();
+        PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setInt(1, id);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    int oid = rs.getInt("id");
+                    int employeeId = rs.getInt("employee_id");
+                    String firstName = rs.getString("first_name");
+                    String lastName = rs.getString("last_name");
+                    int deptId = rs.getInt("depto_id");
 
-            employee = new Employee(oid,employeeId,firstName,lastName,deptId);
+                    employee = new Employee(oid, employeeId, firstName, lastName, deptId);
+                }
+            }
         }
         return employee;
     }
