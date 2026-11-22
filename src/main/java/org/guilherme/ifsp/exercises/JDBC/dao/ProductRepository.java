@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class ProductRepository {
@@ -23,7 +25,7 @@ public class ProductRepository {
             st.executeUpdate();
         }catch (SQLException e ){ e .printStackTrace(); }
     }
-    //READ = SELECT
+    //READ(um) = SELECT
     public Optional<Product> findOne(String sku){
         String sql = "SELECT * FROM products WHERE code = ?";
         try(Connection c = Database.connect(); PreparedStatement st = c.prepareStatement(sql)){
@@ -33,6 +35,16 @@ public class ProductRepository {
                 return Optional.of(new Product(rs.getString("code"), rs.getString("name"),rs.getInt("quantity"),rs.getDouble("price")));
         }catch (SQLException e ){ e .printStackTrace();}
         return Optional.empty();
+    }
+    //READ(todos) = SELECT
+    public List<Product> findAll(){
+        List<Product> list = new ArrayList<>();
+        try(Connection c = Database.connect(); PreparedStatement st  = c.prepareStatement("SELECT * FROM products");
+            ResultSet rs = st.executeQuery()){
+                while (rs.next())
+                    list.add(new Product(rs.getString("code"), rs.getString("name"),rs.getInt("quantity"),rs.getDouble("price")));
+        }catch (SQLException e) {e.printStackTrace();}
+        return  list;
     }
     //UPDATE
     //DELETE
