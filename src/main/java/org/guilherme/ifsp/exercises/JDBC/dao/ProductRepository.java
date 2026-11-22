@@ -6,7 +6,9 @@ import org.guilherme.ifsp.exercises.JDBC.util.Database;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 
 public class ProductRepository {
     //CRUD
@@ -22,6 +24,16 @@ public class ProductRepository {
         }catch (SQLException e ){ e .printStackTrace(); }
     }
     //READ = SELECT
+    public Optional<Product> findOne(String sku){
+        String sql = "SELECT * FROM products WHERE code = ?";
+        try(Connection c = Database.connect(); PreparedStatement st = c.prepareStatement(sql)){
+            st.setString(1,sku);
+            ResultSet rs = st.executeQuery();
+            if(rs.next())
+                return Optional.of(new Product(rs.getString("code"), rs.getString("name"),rs.getInt("quantity"),rs.getDouble("price")));
+        }catch (SQLException e ){ e .printStackTrace();}
+        return Optional.empty();
+    }
     //UPDATE
     //DELETE
 }
