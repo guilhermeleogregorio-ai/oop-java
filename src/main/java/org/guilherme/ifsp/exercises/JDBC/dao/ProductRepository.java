@@ -47,5 +47,15 @@ public class ProductRepository {
         return  list;
     }
     //UPDATE
+    public void update(Product p){
+        String sql = "UPDATE products SET name = ?, price = ?, quantity = ? WHERE code = ?";
+        try(Connection c = Database.connect(); PreparedStatement st = c.prepareStatement(sql)) {
+            st.setString(1,p.getName());
+            st.setDouble(2,p.getPrice());
+            st.setInt(3,p.getQuantity());
+            st.setString(4,p.getSku()); //WHERE por último, como na ordem dos '?'
+            st.executeUpdate();
+        }catch (SQLException e ){e.printStackTrace();}
+    }
     //DELETE
 }
