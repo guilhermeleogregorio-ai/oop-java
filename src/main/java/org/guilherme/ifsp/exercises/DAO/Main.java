@@ -14,7 +14,7 @@ public class Main {
 //        if(con != null){
 //            System.out.println("Database connection sucessfull");
 //        }
-
+        Database.init();
         EmployeeDAO employeeDAO = new EmployeeDAOImpl();
 
         Employee employee = employeeDAO.get(1);
