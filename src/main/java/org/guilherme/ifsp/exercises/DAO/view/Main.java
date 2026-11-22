@@ -24,23 +24,19 @@ public class Main {
                 // Pega o último funcionário inserido na lista para usar o ID real dele nos próximos testes
                 int idReal =  lista.get(lista.size() - 1).getDepId();
 
-
                 // 3. READ ONE (Get)
                 System.out.println("\n--- 3. BUSCANDO POR ID (" + idReal + ") ---");
-                System.out.println("Encontrado: " + controller.bu
+                System.out.println("Encontrado: " + controller.buscarPorId(idReal));
 
                 // 4. UPDATE
                 System.out.println("\n--- 4. ATUALIZANDO ---");
-                Employee paraAtualizar = new Employee(idReal, 25564, "Pedro", "Black", 5);
-                int linhasAtualizadas = employeeDAO.update(paraAtualizar);
-                System.out.println("Linhas atualizadas: " + linhasAtualizadas);
-                System.out.println("Depois do update: " + employeeDAO.get(idReal));
+                System.out.println(controller.atualizar(idReal, 25564, "Pedro", "Black", 5));
+                System.out.println("Depois do update: " + controller.buscarPorId(idReal));
 
                 // 5. DELETE
                 System.out.println("\n--- 5. DELETANDO ---");
-                int linhasDeletadas = employeeDAO.delete(paraAtualizar);
-                System.out.println("Linhas deletadas: " + linhasDeletadas);
-                System.out.println("Busca após deletar (deve ser null): " + employeeDAO.get(idReal));
+                System.out.println(controller.deletar(idReal));
+                System.out.println("Busca após deletar: " + controller.buscarPorId(idReal));
 
     }
 }
